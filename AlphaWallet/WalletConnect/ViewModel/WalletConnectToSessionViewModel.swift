@@ -71,7 +71,8 @@ struct WalletConnectToSessionViewModel {
     }
 
     var allowChangeConnectionServer: Bool {
-        return connection.server == nil
+//        return connection.server == nil
+        return true
     }
 
     func headerViewModel(section: Int) -> TransactionConfirmationHeaderViewModel {
