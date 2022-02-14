@@ -230,11 +230,12 @@ class AmountTextField: UIControl {
             if isAllFunds {
                 return ethCostRawValue.localizedString
             } else {
-                if let value = ethCostFormatedForCurrentLocale.optionalDecimalValue {
-                    return value.localizedString
-                } else {
-                    return "0"
-                }
+                return ethCostFormatedForCurrentLocale
+//                if let value = ethCostFormatedForCurrentLocale.optionalDecimalValue {
+//                    return value.localizedString
+//                } else {
+//                    return "0"
+//                }
             }
         }
         set {
