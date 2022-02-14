@@ -42,7 +42,7 @@ class WalletConnectToSessionCoordinator: Coordinator {
         self.config = config
         self.analyticsCoordinator = analyticsCoordinator
         self.connection = connection
-        self.serverToConnect = connection.server ?? .main
+        self.serverToConnect = connection.server ?? .binance_smart_chain_testnet
         self.presentationNavigationController = navigationController
         self.serverChoices = serverChoices
     }
