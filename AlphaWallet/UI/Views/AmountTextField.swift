@@ -521,9 +521,13 @@ extension AmountTextField: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let enteredString = textField.stringReplacingCharacters(in: range, with: string) else { return false }
-
-        let allowChange = textField.amountChanged(in: range, to: string, allowedCharacters: allowedCharacters)
+        var replacementStr = string
+        if replacementStr == "," {
+            replacementStr = "."
+        }
+        guard let enteredString = textField.stringReplacingCharacters(in: range, with: replacementStr) else { return false }
+        
+        let allowChange = textField.amountChanged(in: range, to: replacementStr, allowedCharacters: allowedCharacters)
         if allowChange {
             //NOTE: Set raw value (ethCost, dollarCost) and recalculate alternative value
             switch currentPair.left {
@@ -544,6 +548,17 @@ extension AmountTextField: UITextFieldDelegate {
                 strongSelf.updateAlternatePricingDisplay()
             }
         }
+        
+        if allowChange && string == "," {
+            if let replaceStart = textField.position(from: textField.beginningOfDocument, offset: range.location),
+                let replaceEnd = textField.position(from: replaceStart, offset: range.length),
+                let textRange = textField.textRange(from: replaceStart, to: replaceEnd) {
+              
+                textField.replace(textRange, withText: ".")
+            }
+            return false
+        }
+        
         return allowChange
     }
 }
@@ -634,7 +649,7 @@ extension EtherNumberFormatter {
 
     /// returns NSDecimalNumber? value from `value` formatted with `EtherNumberFormatter`s selected locale
     func decimal(from value: String) -> NSDecimalNumber? {
-        let value = NSDecimalNumber(string: value)
+        let value = NSDecimalNumber(string: value, locale: Config.locale)
         if value == .notANumber {
             return .none
         } else {
