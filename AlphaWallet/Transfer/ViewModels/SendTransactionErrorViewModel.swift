@@ -55,7 +55,7 @@ struct SendTransactionErrorViewModel {
     var rectifyErrorButtonTitle: String? {
         switch error {
         case .insufficientFunds:
-            return R.string.localizable.tokenTransactionConfirmationErrorRectifyButtonTitleInsufficientFundsError(server.symbol)
+            return R.string.localizable.tokenTransactionConfirmationErrorRectifyButtonTitleInsufficientFundsError()
         case .nonceTooLow:
             return R.string.localizable.tokenTransactionConfirmationErrorRectifyButtonTitleNonceTooLowError()
         case .gasPriceTooLow:
