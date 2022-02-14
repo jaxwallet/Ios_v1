@@ -151,7 +151,7 @@ struct TransactionDetailsViewModel {
     }
 
     var amountAttributedString: NSAttributedString {
-        return transactionViewModel.fullAmountAttributedString
+        return transactionViewModel.shortAmountAttributedString
     }
 
     var shareItem: URL? {

@@ -54,6 +54,10 @@ struct TransactionViewModel {
     var fullAmountAttributedString: NSAttributedString {
         return amountAttributedString(for: fullValue)
     }
+    
+    var shortAmountAttributedString: NSAttributedString {
+        return amountAttributedString(for: shortValue)
+    }
 
     func amountAttributedString(for value: TransactionValue) -> NSAttributedString {
         var status = ""
