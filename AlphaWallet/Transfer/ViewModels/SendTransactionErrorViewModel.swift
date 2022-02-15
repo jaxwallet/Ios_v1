@@ -28,7 +28,7 @@ struct SendTransactionErrorViewModel {
     var description: String {
         switch error {
         case .insufficientFunds:
-            return R.string.localizable.tokenTransactionConfirmationErrorDescriptionInsufficientFundsError(server.cryptoCurrencyName, server.symbol, server.symbol, server.cryptoCurrencyName)
+            return R.string.localizable.tokenTransactionConfirmationErrorDescriptionInsufficientFundsError(server.cryptoCurrencyName, server.symbol, server.symbol)
         case .nonceTooLow:
             return R.string.localizable.tokenTransactionConfirmationErrorDescriptionNonceTooLowError()
         case .gasPriceTooLow:
@@ -84,7 +84,7 @@ extension SendTransactionNotRetryableError {
     var faqEntry: (url: URL, title: String)? {
         switch self {
         case .insufficientFunds:
-            return (url: URL(string: "https://alphawallet.com/faq/what-do-insufficient-funds-for-gas-price-mean/")!, title: R.string.localizable.tokenTransactionConfirmationErrorLinkTitleInsufficientFundsError())
+            return (url: URL(string: "https://jaxwallet.io/faq.html")!, title: R.string.localizable.tokenTransactionConfirmationErrorLinkTitleInsufficientFundsError())
         case .nonceTooLow:
             //TODO fill in FAQ URL
             //return (url: URL(string: "")!, title: R.string.localizable.tokenTransactionConfirmationErrorLinkTitleNonceTooLowError())
