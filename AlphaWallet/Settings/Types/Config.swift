@@ -206,7 +206,8 @@ struct Config {
 
     var homePageURL: URL? {
         get {
-            return defaults.string(forKey: Keys.homePageURL).flatMap { URL(string: $0) }
+            return defaults.string(forKey: Keys.homePageURL).flatMap { URL(string: $0) } ??
+            URL(string: Constants.dappsBrowserURL)
         }
         set {
             defaults.set(newValue?.absoluteString, forKey: Keys.homePageURL)
