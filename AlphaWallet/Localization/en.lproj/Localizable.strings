@@ -516,7 +516,7 @@
 "token.transactionConfirmation.error.title.gasPriceTooLow" = "Gas Price is too low";
 "token.transactionConfirmation.error.title.gasLimitTooLow" = "Gas Limit is too low";
 "token.transactionConfirmation.error.title.gasLimitTooHigh" = "Gas Limit is too high";
-"token.transactionConfirmation.error.description.insufficientFundsError" = "Every transaction requires a small amount of %@ (%@) to pay for the fees. You can receive %@ from a different wallet, crypto exchange, or you can get the wallet address using the button below.";
+"token.transactionConfirmation.error.description.insufficientFundsError" = "Every transaction requires a small amount of %@ (%@) to pay for the fees. You can receive %@ from a different wallet, crypto exchange. You can get the wallet address using the button below.";
 "token.transactionConfirmation.error.description.nonceTooLowError" = "The nonce is the total number of transactions which has been sent from this wallet so far, and is included for security purposes. \nWe recommend to leave the nonce empty. \nWe'll fill it for you.";
 "token.transactionConfirmation.error.description.gasPriceTooLow" = "The gas price specified for this transaction is too low. JaxWallet is using a live oracle and updates the gas price every 15 seconds. We recommend you to choose preselected amount (Slow, Average, Fast).";
 "token.transactionConfirmation.error.description.gasLimitTooLow" = "The gas limit specified for this transaction is too low. JaxWallet is using a live oracle and updates the gas price every 15 seconds. We recommend you to choose preselected amount (Slow, Average, Fast).";
