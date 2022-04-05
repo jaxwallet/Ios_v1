@@ -312,9 +312,7 @@ class TokensViewController: UIViewController {
     }
 
     @objc private func scanQRCodeButtonSelected(_ sender: UIBarButtonItem) {
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            delegate?.scanQRCodeSelected(in: self)
-//        }
+
         delegate?.scanQRCodeSelected(in: self)
     }
 

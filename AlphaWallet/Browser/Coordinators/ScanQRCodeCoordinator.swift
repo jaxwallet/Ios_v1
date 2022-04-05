@@ -5,6 +5,7 @@ import QRCodeReaderViewController
 import BigInt
 import PromiseKit
 import AVFoundation
+import PhotosUI
 
 protocol ScanQRCodeCoordinatorDelegate: AnyObject {
     func didCancel(in coordinator: ScanQRCodeCoordinator)
@@ -56,11 +57,30 @@ final class ScanQRCodeCoordinator: NSObject, Coordinator {
         
         AVCaptureDevice.requestAccess(for: .video) { success in
               if success { // if request is granted (success is true)
-                DispatchQueue.main.async {
-                    self.logStartScan(source: source)
-                    self.navigationController.makePresentationFullScreenForiOS13Migration()
-                    self.parentNavigationController.present(self.navigationController, animated: true)
-                }
+                  PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (status) in
+                      switch status {
+                      case .authorized, .limited:
+                          DispatchQueue.main.async {
+                              self.logStartScan(source: source)
+                              self.navigationController.makePresentationFullScreenForiOS13Migration()
+                              self.parentNavigationController.present(self.navigationController, animated: true)
+                          
+                          }
+
+                          case .restricted:
+                          break
+
+                          case .denied:
+                          break
+
+                          case .notDetermined:
+                              break
+
+                          @unknown default:
+                              break
+                          }
+                  }
+                
               }
             }
     }
