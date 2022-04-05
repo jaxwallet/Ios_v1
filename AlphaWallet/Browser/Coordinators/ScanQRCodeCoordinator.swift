@@ -4,6 +4,7 @@ import Foundation
 import QRCodeReaderViewController
 import BigInt
 import PromiseKit
+import AVFoundation
 
 protocol ScanQRCodeCoordinatorDelegate: AnyObject {
     func didCancel(in coordinator: ScanQRCodeCoordinator)
@@ -52,9 +53,16 @@ final class ScanQRCodeCoordinator: NSObject, Coordinator {
     }
 
     func start(fromSource source: Analytics.ScanQRCodeSource) {
-        logStartScan(source: source)
-        navigationController.makePresentationFullScreenForiOS13Migration()
-        parentNavigationController.present(navigationController, animated: true)
+        
+        AVCaptureDevice.requestAccess(for: .video) { success in
+              if success { // if request is granted (success is true)
+                DispatchQueue.main.async {
+                    self.logStartScan(source: source)
+                    self.navigationController.makePresentationFullScreenForiOS13Migration()
+                    self.parentNavigationController.present(self.navigationController, animated: true)
+                }
+              }
+            }
     }
 
     @objc private func dismiss() {

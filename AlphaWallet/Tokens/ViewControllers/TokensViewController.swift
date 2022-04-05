@@ -5,7 +5,6 @@ import Result
 import StatefulViewController
 import PromiseKit
 import SwiftUI
-import AVFoundation
 
 protocol TokensViewControllerDelegate: AnyObject {
     func didPressAddHideTokens(viewModel: TokensViewModel)
@@ -316,14 +315,7 @@ class TokensViewController: UIViewController {
 //        if UIImagePickerController.isSourceTypeAvailable(.camera) {
 //            delegate?.scanQRCodeSelected(in: self)
 //        }
-        
-        AVCaptureDevice.requestAccess(for: .video) { success in
-              if success { // if request is granted (success is true)
-                DispatchQueue.main.async {
-                    self.delegate?.scanQRCodeSelected(in: self)
-                }
-              }
-            }
+        delegate?.scanQRCodeSelected(in: self)
     }
 
     @objc private func myQRCodeButtonSelected(_ sender: UIBarButtonItem) {
