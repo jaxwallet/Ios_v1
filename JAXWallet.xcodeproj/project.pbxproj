@@ -6497,7 +6497,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: AJ TECHNOLOGIES LTD (55LT762C5W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AJ TECHNOLOGIES LTD (55LT762C5W)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 55LT762C5W;
 				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -6516,7 +6516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.01;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaxwallet.jaxwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6543,7 +6543,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: AJ TECHNOLOGIES LTD (55LT762C5W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AJ TECHNOLOGIES LTD (55LT762C5W)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 55LT762C5W;
 				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -6562,7 +6562,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaxwallet.jaxwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
