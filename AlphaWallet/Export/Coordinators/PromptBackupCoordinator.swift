@@ -122,8 +122,9 @@ class PromptBackupCoordinator: Coordinator {
 
     private func createBackupAfterWalletCreationView() {
         let view = createBackupViewImpl(viewModel: PromptBackupWalletAfterWalletCreationViewViewModel(walletAddress: wallet.address))
-        prominentPromptView = nil
-        subtlePromptView = view
+        prominentPromptView = view
+        let view1 = createBackupViewImpl(viewModel: PromptBackupWalletAfterWalletCreationViewViewModel(walletAddress: wallet.address))
+        subtlePromptView = view1
         informDelegatesPromptHasChanged()
     }
 
