@@ -130,7 +130,9 @@ extension AlphaWallet.Address {
         case "0xF48e200EAF9906362BB1442fca31e0835773b8B4".uppercased():
             return R.image.tokenSaud()
         case "0xcA1262e77Fb25c0a4112CFc9bad3ff54F617f2e6".uppercased(), "0x3a171b7c5d671e3c4bb5823b8fd265f4e4e9a399".uppercased():
-            return R.image.jaxBscToken()
+            return R.image.jaxnet()
+        case "0x643D58cF4AF8f5fa32139981d85B8629802Bcd5E".uppercased():
+            return R.image.jaxnet2()
         case "0x783f4a2efab4f34d6a0d88b71cf1fac6d9b46ff0".uppercased(), "0xf07352E8e3b88e8500D24301f5FC05A916d708cc".uppercased():
             return R.image.jax()
         case "0xa51bcdc792285598ba7443c71d557e0b7df6f991".uppercased(), "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56".uppercased():
